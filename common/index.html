@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        "Привет, как дела?"
+    </div>
+    <button id="myButton"></button>
+    <input type="text" id="phone">
+    <button id="string"></button>
+    <script>
+        const myButton = document.querySelector('#myButton');
+        const container = document.querySelector('#container');
+        const phone = document.querySelector('#phone');
+
+        myButton.addEventListener('click', function() {
+            container.style.color = 'red';
+        });
+        container.addEventListener('click', function() {
+            console.log('клик по контейнеру');
+        });
+        phone.addEventListener('keydown', function(event) {
+            console.log(event.key);
+        });
+        phone.addEventListener('keydown', function(event) {
+            let isDigit = false;
+
+            if(event.key >= 0 || event.key <= 9) {
+                isDigit = true;
+            }
+            if (isDigit == false) {
+                console.log('цифра');
+            } else {
+                console.log('буква');
+            }
+        });
+    </script>
+</body>
+</html>
